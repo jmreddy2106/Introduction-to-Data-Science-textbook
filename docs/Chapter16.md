@@ -18,8 +18,8 @@ graph TD
 
 Common choice for numeric data is **Euclidean distance**:
 
-$$d(\mathbf x_i,\mathbf x_j)=\lVert \mathbf x_i-\mathbf x_j\rVert_2
-= \sqrt{{\sum_{p=1}^P (x_{ip}-x_{jp})^2}}. $$
+$$ d(\mathbf x_i,\mathbf x_j)=\lVert \mathbf x_i-\mathbf x_j\rVert_2
+ = \sqrt{ \sum_{p=1}^P (x_{ip}-x_{jp})^2 } . $$
 
 ---
 
@@ -28,7 +28,7 @@ $$d(\mathbf x_i,\mathbf x_j)=\lVert \mathbf x_i-\mathbf x_j\rVert_2
 ### 2.1 Objective
 Given data \(X=\{\mathbf x_i\}_{i=1}^n\), partition into \(k\) clusters with centers \( \{\boldsymbol\mu_c\}_{c=1}^k \) by minimizing:
 
-$$\text{SSE} = \sum_{c=1}^k \ \sum_{\mathbf x_i \in C_c} \lVert \mathbf x_i - \boldsymbol\mu_c \rVert^2. $$
+$$ \text{SSE} = \sum_{c=1}^k \ \sum_{\mathbf x_i \in C_c} \lVert \mathbf x_i - \boldsymbol\mu_c \rVert^2. $$
 
 ### 2.2 Alternating Minimization
 - **Assignment step:** assign each point to nearest center  
@@ -76,8 +76,8 @@ Overall score is the mean \(s(i)\). Higher is better.
 ### 3.3 Davies–Bouldin (DB) Index
 For cluster \(c\), let \(S_c\) be average distance of points in \(c\) to center \(\mu_c\); and \(M_{cd}=\lVert \mu_c-\mu_d\rVert\).  
 For each \(c\), compute \(R_{cd}=\frac{S_c+S_d}{M_{cd}}\) for \(d\ne c\), then
-$$
-\text{DB}=\frac{1}{k}\sum_{c=1}^k \max_{d\ne c} R_{cd}.
+
+$$ \text{DB}=\frac{1}{k}\sum_{c=1}^k \max_{d\ne c} R_{cd}.
 $$
 Lower DB is better (compact & well-separated clusters).
 
