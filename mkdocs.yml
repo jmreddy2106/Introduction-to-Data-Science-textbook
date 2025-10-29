@@ -1,0 +1,76 @@
+site_name: Introduction to Data Science — Textbook
+site_description: A compact textbook with practical plots and by-hand examples
+site_url: https://jmreddy2106.github.io/Introduction-to-Data-Science-textbook/
+
+docs_dir: docs
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - scheme: default
+      primary: blue
+      accent: indigo
+  language: en
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+
+repo_url: https://github.com/jmreddy2106/Introduction-to-Data-Science-textbook
+repo_name: Introduction-to-Data-Science-textbook
+edit_uri: edit/main/
+
+nav:
+  - Home: index.md
+  - Chapters:
+    - Chapter 1: Chapter1.md
+    - Chapter 2: Chapter2.md
+    - Chapter 3: Chapter3.md
+    - Chapter 4: Chapter4.md
+    - Chapter 5: Chapter5.md
+    - Chapter 6: Chapter6.md
+    - Chapter 7: Chapter7.md
+    - Chapter 8: Chapter8.md
+    - Chapter 9: Chapter9.md
+    - Chapter 10: Chapter10.md
+    - Chapter 11: Chapter11.md
+    - Chapter 12: Chapter12.md
+    - Chapter 13: Chapter13.md
+    - Chapter 14: Chapter14.md
+    - Chapter 15: Chapter15.md
+    - Chapter 16: Chapter16.md
+    - Chapter 17: Chapter17.md
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # Prefer local Mermaid for reliability (put these files under docs/javascripts/)
+  - javascripts/mermaid.min.js
+  - javascripts/mermaid-init.js
+
+plugins:
+  - search
