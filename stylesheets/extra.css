@@ -1,0 +1,33 @@
+/* Custom styles for your documentation */
+
+/* Better table styling */
+.md-typeset table:not([class]) {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Code block improvements */
+  .md-typeset pre > code {
+    font-size: 0.85em;
+  }
+  
+  /* Admonition styling */
+  .md-typeset .admonition {
+    font-size: 0.9rem;
+  }
+  
+  /* Chapter numbering */
+  .md-nav__item--nested > .md-nav__link::before {
+    content: counters(chapter, ".") " ";
+    counter-increment: chapter;
+  }
+  
+  /* Print styles */
+  @media print {
+    .md-sidebar,
+    .md-header,
+    .md-footer {
+      display: none;
+    }
+  }
