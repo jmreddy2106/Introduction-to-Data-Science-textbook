@@ -1,74 +1,227 @@
+# Site Information
 site_name: Introduction to Data Science — Textbook
 site_description: A compact textbook with practical plots and by-hand examples
+site_author: Your Name
 site_url: https://jmreddy2106.github.io/Introduction-to-Data-Science-textbook/
 
-docs_dir: docs
+# Repository Information
+repo_url: https://github.com/jmreddy2106/Introduction-to-Data-Science-textbook
+repo_name: jmreddy2106/Introduction-to-Data-Science-textbook
+edit_uri: edit/main/docs/
 
+# Copyright
+copyright: Copyright &copy; 2025 - Dr. Jagan Mohan Reddy
+
+# Configuration
+docs_dir: docs
+site_dir: site
+use_directory_urls: false
+strict: true
+dev_addr: 127.0.0.1:8000
+
+# Theme Configuration
 theme:
   name: material
+ 
+  # Theme Features
   features:
+    # Navigation
     - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
     - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
     - navigation.expand
+    - navigation.path
+    - navigation.prune
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    
+    # Table of Contents
+    - toc.follow
+    - toc.integrate
+    
+    # Search
     - search.suggest
     - search.highlight
+    - search.share
+    
+    # Content
     - content.code.copy
+    - content.code.annotate
     - content.action.edit
+    - content.action.view
+    - content.tooltips
+    - content.tabs.link
+    
+    # Header
+    - announce.dismiss
+    - header.autohide
+  
+  # Color Palette
   palette:
-    - scheme: default
-      primary: blue
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
       accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  # Fonts
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  # Language
   language: en
-  logo: assets/logo.svg
-  favicon: assets/favicon.svg
+  
+  # Logo and Icons
+  icon:
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+  
+  favicon: assets/favicon.png
 
-repo_url: https://github.com/jmreddy2106/Introduction-to-Data-Science-textbook
-repo_name: Introduction-to-Data-Science-textbook
-edit_uri: edit/main/
-
+# Navigation
 nav:
-  - Home: index.md
+  - Home:
+    - Welcome: index.md
+    - Getting Started: getting-started.md
+    - About: about.md
+  
   - Chapters:
-    - Chapter 1: Chapter1.md
-    - Chapter 2: Chapter2.md
-    - Chapter 3: Chapter3.md
-    - Chapter 4: Chapter4.md
-    - Chapter 5: Chapter5.md
-    - Chapter 6: Chapter6.md
-    - Chapter 7: Chapter7.md
-    - Chapter 8: Chapter8.md
-    - Chapter 9: Chapter9.md
-    - Chapter 10: Chapter10.md
-    - Chapter 11: Chapter11.md
-    - Chapter 12: Chapter12.md
-    - Chapter 13: Chapter13.md
-    - Chapter 14: Chapter14.md
-    - Chapter 15: Chapter15.md
-    - Chapter 16: Chapter16.md
-    - Chapter 17: Chapter17.md
+    - Chapter 1 - Introduction: Chapter1.md
+    - Chapter 2 - Data Types: Chapter2.md
+    - Chapter 3 - Data Collection: Chapter3.md
+    - Chapter 4 - Data Cleaning: Chapter4.md
+    - Chapter 5 - Exploratory Analysis: Chapter5.md
+    - Chapter 6 - Statistical Methods: Chapter6.md
+    - Chapter 7 - Visualization: Chapter7.md
+    - Chapter 8 - Machine Learning Basics: Chapter8.md
+    - Chapter 9 - Supervised Learning: Chapter9.md
+    - Chapter 10 - Unsupervised Learning: Chapter10.md
+    - Chapter 11 - Neural Networks: Chapter11.md
+    - Chapter 12 - Deep Learning: Chapter12.md
+    - Chapter 13 - NLP Basics: Chapter13.md
+    - Chapter 14 - Time Series: Chapter14.md
+    - Chapter 15 - Big Data: Chapter15.md
+    - Chapter 16 - Ethics in DS: Chapter16.md
+    - Chapter 17 - Case Studies: Chapter17.md
+  
+  - Resources:
+    - References: references.md
+    - Glossary: glossary.md
+    - Datasets: datasets.md
+  
+  - Appendix:
+    - Python Basics: appendix/python.md
+    - R Basics: appendix/r.md
+    - SQL Reference: appendix/sql.md
 
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      lang: en
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+
+# Markdown Extensions
 markdown_extensions:
+  # Python Markdown
+  - abbr
   - admonition
-  - footnotes
   - attr_list
+  - def_list
+  - footnotes
   - md_in_html
   - toc:
       permalink: true
-  - pymdownx.highlight
-  - pymdownx.tasklist:
-      custom_checkbox: true
+      title: On this page
+      permalink_title: Anchor link to this section for reference
+      toc_depth: 3
+  
+  # Python Markdown Extensions
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      auto_title: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.pathconverter
 
+# Extra JavaScript
 extra_javascript:
+  # MathJax for mathematical notation
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js
+  # Mermaid for diagrams
+  - https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js
 
-plugins:
-  - search
+# Extra CSS
+extra_css:
+  - stylesheets/extra.css
+
+# Extra Configuration
+extra:
+  # Social Links
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jmreddy2106
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/jmreddy2106
+      name: LinkedIn
+  
+  # Generator notice
+  generator: false
