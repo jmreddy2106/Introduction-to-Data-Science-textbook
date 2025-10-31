@@ -53,4 +53,14 @@ Introduction-to-Data-Science-textbook/
 ```
 ---
 
+### Deployment of GitHub Pages
+
+```python
+
+pip install mkdocs mkdocs-material
+mkdocs build
+mkdocs gh-deploy --force
+
+```
+
 Would you like me to also generate a small **`docs/contributing.md`** (with setup steps and style conventions for new contributors)? It fits naturally with this README and MkDocs navigation.
